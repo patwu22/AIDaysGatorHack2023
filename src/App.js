@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Categories from "./Categories";
 
+
 function App() {
   return (
       <Container>
