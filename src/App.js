@@ -1,10 +1,14 @@
-import { Button, Container, Title } from "react-bootstrap";
+import { Container, Stack, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+<<<<<<< HEAD
+=======
+import Categories from "./Categories";
+>>>>>>> 7a7d3e7fbe1adde67752cfed75e50550d661377e
 
 function App() {
- 
   return (
+<<<<<<< HEAD
       <>
     <NavBar></NavBar>
       <Container className="p-3">
@@ -12,74 +16,25 @@ function App() {
               <Button>click me!!!</Button>
           </Container>
     </>
+=======
+      <Container>
+        <Row>
+          <Col></Col>
+          <Col xs={6} className="bg-secondary">
+            <h1 className="header">Product Randomizer Navigator</h1>
+            <Stack direction="horizontal" gap={2}>
+              <Categories name="category1"></Categories>
+              <Categories name="category2"></Categories>
+              <Categories name="category3"></Categories>
+              <Categories name="category4"></Categories>
+              <Categories name="category5"></Categories>
+            </Stack>
+          </Col>
+          <Col></Col>
+        </Row>
+      </Container>
+>>>>>>> 7a7d3e7fbe1adde67752cfed75e50550d661377e
   );
 }
 
 export default App;
-
-function NavBar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Walmart_Spark.svg/1925px-Walmart_Spark.svg.png" width="30" height="30" class="d-inline-block align-top" alt="Responsive image"></img>
-        Walmart
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul className="navbar-nav">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Features
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Pricing
-            </a>
-          </li>
-          <li className="nav-item dropdown">
-            <a
-              className="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              Dropdown link
-            </a>
-            <div
-              className="dropdown-menu"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <a className="dropdown-item" href="#">
-                Action
-              </a>
-              <a className="dropdown-item" href="#">
-                Another action
-              </a>
-              <a className="dropdown-item" href="#">
-                Something else here
-              </a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
-}
