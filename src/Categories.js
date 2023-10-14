@@ -2,7 +2,6 @@ import { Button } from "react-bootstrap";
 import axios from 'axios';
 
 function Categories({ name }) {
-
     async function handleClick() {
         const response = await axios.post(
             "https://api.openai.com/v1/completions",
@@ -16,7 +15,7 @@ function Categories({ name }) {
             {
               headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer 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`,
+                    Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
               },
             }
           );
