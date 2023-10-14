@@ -6,17 +6,17 @@ function Categories({ name }) {
         const response = await axios.post(
             "https://api.openai.com/v1/completions",
             {
-              prompt: 'Tell me about food.',
-              model: 'text-davinci-002',
-              max_tokens: 50,
-              n: 1,
-              stop: ".",
+                prompt: 'Tell me about food.',
+                model: 'text-davinci-002',
+                max_tokens: 50,
+                n: 1,
+                stop: ".",
             },
             {
               headers: {
-                "Content-Type": "application/json",
-                    Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
-              },
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
+              }
             }
           );
           console.log(response.data.choices[0].text);
