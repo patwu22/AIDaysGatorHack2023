@@ -1,7 +1,6 @@
 import { Button } from "react-bootstrap";
 
 function Categories({ name }) {
-
     async function handleClick() {
 
 
