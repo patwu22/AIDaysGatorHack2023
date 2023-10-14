@@ -1,9 +1,13 @@
-export default function Categories({ name }) {
+import { Button } from "react-bootstrap";
+
+function Categories({ name }) {
     function handleClick() {
         alert(name);
     }
 
     return (
-        <button onClick={handleClick}>{name}</button>
+        <Button onClick={handleClick}>{name}</Button>
     );
 }
+
+export default Categories;
