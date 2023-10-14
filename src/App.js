@@ -1,23 +1,10 @@
 import { Container, Stack, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-<<<<<<< HEAD
-=======
 import Categories from "./Categories";
->>>>>>> 7a7d3e7fbe1adde67752cfed75e50550d661377e
-
 
 function App() {
   return (
-<<<<<<< HEAD
-      <>
-    <NavBar></NavBar>
-      <Container className="p-3">
-        <h1 className="header">Product Randomizer Navigator</h1>
-              <Button>click me!!!</Button>
-          </Container>
-    </>
-=======
       <Container>
         <Row>
           <Col></Col>
@@ -34,7 +21,6 @@ function App() {
           <Col></Col>
         </Row>
       </Container>
->>>>>>> 7a7d3e7fbe1adde67752cfed75e50550d661377e
   );
 }
 
