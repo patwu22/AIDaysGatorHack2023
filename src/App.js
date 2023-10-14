@@ -1,15 +1,16 @@
 import { Button, Container, Title } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 function App() {
  
   return (
-    <>
+      <>
     <NavBar></NavBar>
       <Container className="p-3">
         <h1 className="header">Product Randomizer Navigator</h1>
-        <Button>click me!!!</Button>
-      </Container>
+              <Button>click me!!!</Button>
+          </Container>
     </>
   );
 }
