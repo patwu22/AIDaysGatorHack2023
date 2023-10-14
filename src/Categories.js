@@ -16,7 +16,7 @@ function Categories({ name }) {
             {
               headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer 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`,
+                Authorization: `Bearer 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`,
               },
             }
           );
