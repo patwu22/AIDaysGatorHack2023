@@ -83,9 +83,9 @@ function CategoriesStack() {
             direction="horizontal"
             gap={2}
           >
-            <Categories name={c1}></Categories>
-            <Categories name={c2}></Categories>
-            <Categories name={c3}></Categories>
+            <Categories name={c1}/>
+            <Categories name={c2}/>
+            <Categories name={c3}/>
             </Stack>
     );
 }
