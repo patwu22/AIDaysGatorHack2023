@@ -8,7 +8,7 @@ function App() {
       <Container>
         <Row>
           <Col></Col>
-          <Col xs={6} className="bg-secondary">
+          <Col xs={6} className="bg-light border">
             <h1 className="header">Product Randomizer Navigator</h1>
             <Stack direction="horizontal" gap={2}>
               <Categories name="category1"></Categories>
