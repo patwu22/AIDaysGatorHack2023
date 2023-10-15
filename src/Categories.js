@@ -1,10 +1,9 @@
 import { Button } from "react-bootstrap";
 
-function Categories({ name }) {
-    async function handleClick() {
-
-
-
+function Categories({ name, stage, setstage, setname }) {
+    const handleClick = () => {
+        setname(name);
+        setstage(stage + 1);
     }
 
     return (
