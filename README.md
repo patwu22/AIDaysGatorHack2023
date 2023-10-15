@@ -1,7 +1,7 @@
 Group Name: RPA
 Group Members: Ruobin Chen, Patrick Wu, Alexander Aziz
 
-RPA presents:Product Randomizer Navigator
+RPA presents: Product Randomizer Navigator
 
 This tool generates products based on user selection of AI-generated categories/subcategories.
 
