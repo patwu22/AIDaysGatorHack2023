@@ -1,13 +1,15 @@
-import { Stack } from "react-bootstrap";
+import { Stack, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Button } from "react-bootstrap";
 import Categories from "./Categories";
 
 function CategoriesStack() {
     const [stage, setstage] = useState(1);
     const [name, setname] = useState('');
+    const [items, setitems] = useState('');
     const [c1, setc1] = useState('');
     const [c2, setc2] = useState('');
     const [c3, setc3] = useState('');
@@ -22,7 +24,7 @@ function CategoriesStack() {
                     max_tokens: 50,
                     temperature: 0.5,
                     n: 1,
-                    stop: ".",
+                    stop: "."
                 },
                 {
                     headers: {
@@ -46,7 +48,7 @@ function CategoriesStack() {
                     max_tokens: 50,
                     temperature: 0.5,
                     n: 1,
-                    stop: ".",
+                    stop: "."
                 },
                 {
                     headers: {
@@ -69,8 +71,7 @@ function CategoriesStack() {
                     model: 'text-davinci-003',
                     max_tokens: 1000,
                     temperature: 0.5,
-                    n: 1,
-                    stop: ".",
+                    n: 1
                 },
                 {
                     headers: {
@@ -79,7 +80,7 @@ function CategoriesStack() {
                     }
                 }
             );
-            console.log(response.data.choices[0].text);
+            setitems(response.data.choices[0].text);
         }
         if (stage === 1) {
             OpenaiPrompt();
@@ -90,12 +91,11 @@ function CategoriesStack() {
         else if (stage === 3) {
             OpenaiPrompt3();
         }
-        console.log(stage);
     }, [stage, name]);
 
-    
 
     return (
+        <div>
           <Stack
             className="m-3 d-flex justify-content-center"
             direction="horizontal"
@@ -105,6 +105,16 @@ function CategoriesStack() {
             <Categories name={c2} stage={stage} setstage={setstage} setname={setname} />
             <Categories name={c3} stage={stage} setstage={setstage} setname={setname} />
             </Stack>
+            <div className="text-center">
+                <h4>Items List</h4>
+                <Card><Card.Body>
+                    {items.slice(0, -1).split(';').map((item, index) => (<Card.Title key={index}>{item}</Card.Title>))}
+                </Card.Body></Card>
+            </div>
+            <div className="text-center">
+                <Button className="m-3" onClick={() => { setstage(1); setitems(''); }}>Reset</Button>
+            </div>
+        </div>
     );
 }
 
