@@ -1,4 +1,4 @@
-import { Stack } from "react-bootstrap";
+import { Stack, Card } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import axios from 'axios';
 
@@ -107,7 +107,9 @@ function CategoriesStack() {
             </Stack>
             <div className="text-center">
                 <h4>Items List</h4>
-                <ul>{items.split(';').map((item, ind) => (<li key={ind}>{item}</li>))}</ul>
+                <Card><Card.Body>
+                    {items.slice(0, -1).split(';').map((item, index) => (<Card.Title key={index}>{item}</Card.Title>))}
+                </Card.Body></Card>
             </div>
             <div className="text-center">
                 <Button className="m-3" onClick={() => { setstage(1); setitems(''); }}>Reset</Button>
