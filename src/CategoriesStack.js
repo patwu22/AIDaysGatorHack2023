@@ -23,9 +23,9 @@ function CategoriesStack() {
                 "https://api.openai.com/v1/completions",
                 {
                     prompt: 'Generate the names of five broad categories of goods or services.They should be broad enough to contain three subcategories.Each item should have its first letter capitalized.In your response, only provide the name of each broad category, separated by comma.Do not include any words other than the categories.Example: “Food, Arts and Crafts Materials, Tech Gadgets”',
-                    model: 'text-davinci-002',
+                    model: 'text-davinci-003',
                     max_tokens: 50,
-                    temperature: 0.5,
+                    temperature: 0.8,
                     n: 1,
                     stop: "."
                 },
