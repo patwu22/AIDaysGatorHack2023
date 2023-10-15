@@ -13,13 +13,16 @@ function CategoriesStack() {
     const [c1, setc1] = useState('');
     const [c2, setc2] = useState('');
     const [c3, setc3] = useState('');
+    const [c4, setc4] = useState('');
+    const [c5, setc5] = useState('');
+
 
     useEffect(() => {
         async function OpenaiPrompt() {
             const response = await axios.post(
                 "https://api.openai.com/v1/completions",
                 {
-                    prompt: 'Generate the names of three broad categories of goods or services.They should be broad enough to contain three subcategories.Each item should have its first letter capitalized.In your response, only provide the name of each broad category, separated by comma.Do not include any words other than the categories.Example: “Food, Arts and Crafts Materials, Tech Gadgets”',
+                    prompt: 'Generate the names of five broad categories of goods or services.They should be broad enough to contain three subcategories.Each item should have its first letter capitalized.In your response, only provide the name of each broad category, separated by comma.Do not include any words other than the categories.Example: “Food, Arts and Crafts Materials, Tech Gadgets”',
                     model: 'text-davinci-002',
                     max_tokens: 50,
                     temperature: 0.5,
@@ -37,13 +40,15 @@ function CategoriesStack() {
             setc1(cate[0]);
             setc2(cate[1]);
             setc3(cate[2]);
+            setc4(cate[3]);
+            setc5(cate[4]);
         }
         
         async function OpenaiPrompt2() {
             const response = await axios.post(
                 "https://api.openai.com/v1/completions",
                 {
-                    prompt: `Generate the names of three subcategories of ${name}. Each item should have its first letter capitalized.In your response, only provide the name of each broad category, separated by comma.Do not include any words other than the categories.Example: “Food, Arts and Crafts Materials, Tech Gadgets”`,
+                    prompt: `Generate the names of five subcategories of ${name}. Each item should have its first letter capitalized.In your response, only provide the name of each broad category, separated by comma.Do not include any words other than the categories.Example: “Food, Arts and Crafts Materials, Tech Gadgets”`,
                     model: 'text-davinci-003',
                     max_tokens: 50,
                     temperature: 0.5,
@@ -61,6 +66,9 @@ function CategoriesStack() {
             setc1(cate[0]);
             setc2(cate[1]);
             setc3(cate[2]);
+            setc4(cate[3]);
+            setc5(cate[4]);
+
         }
 
         async function OpenaiPrompt3() {
@@ -104,6 +112,9 @@ function CategoriesStack() {
             <Categories name={c1} stage={stage} setstage={setstage} setname={setname} />
             <Categories name={c2} stage={stage} setstage={setstage} setname={setname} />
             <Categories name={c3} stage={stage} setstage={setstage} setname={setname} />
+            <Categories name={c4} stage={stage} setstage={setstage} setname={setname} />
+            <Categories name={c5} stage={stage} setstage={setstage} setname={setname} />
+
             </Stack>
             <div className="text-center">
                 <h4>Items List</h4>
