@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Categories from "./Categories";
 
 function CategoriesStack() {
+    const [stage, setstage] = useState(1);
+    const [name, setname] = useState('');
     const [c1, setc1] = useState('');
     const [c2, setc2] = useState('');
     const [c3, setc3] = useState('');
@@ -35,7 +37,7 @@ function CategoriesStack() {
             setc3(cate[2]);
         }
         
-        async function OpenaiPrompt2(name) {
+        async function OpenaiPrompt2() {
             const response = await axios.post(
                 "https://api.openai.com/v1/completions",
                 {
@@ -58,7 +60,8 @@ function CategoriesStack() {
             setc2(cate[1]);
             setc3(cate[2]);
         }
-        async function OpenaiPrompt3(name) {
+
+        async function OpenaiPrompt3() {
              const response = await axios.post(
                 "https://api.openai.com/v1/completions",
                 {
@@ -78,11 +81,17 @@ function CategoriesStack() {
             );
             console.log(response.data.choices[0].text);
         }
-        OpenaiPrompt();
-        //OpenaiPrompt2('Food');
-        //OpenaiPrompt3('School supplies');
-
-    }, []);
+        if (stage === 1) {
+            OpenaiPrompt();
+        }
+        else if (stage === 2) {
+            OpenaiPrompt2();
+        }
+        else if (stage === 3) {
+            OpenaiPrompt3();
+        }
+        console.log(stage);
+    }, [stage, name]);
 
     
 
@@ -92,9 +101,9 @@ function CategoriesStack() {
             direction="horizontal"
             gap={2}
           >
-            <Categories name={c1}></Categories>
-            <Categories name={c2}></Categories>
-            <Categories name={c3}></Categories>
+            <Categories name={c1} stage={stage} setstage={setstage} setname={setname} />
+            <Categories name={c2} stage={stage} setstage={setstage} setname={setname} />
+            <Categories name={c3} stage={stage} setstage={setstage} setname={setname} />
             </Stack>
     );
 }
